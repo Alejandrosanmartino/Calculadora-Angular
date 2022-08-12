@@ -1,0 +1,36 @@
+<h1>{{title}}</h1>
+
+<!--Vamos a aplicar Bootstrap para ello deberemos de seguir los siguientes pasos:
+1-Denter la ejecución de la aplicación Ctrl+C 
+2-Instalaremos bootstrap dentro del directorio de nuestra app: npm install bootstrap --save 
+3-Buscar archivo Angular.json en la parte de "Styles" después de src/styles.css añadiremos:
+ "node_modules/bootstrap/dist/css/bootstrap.min.css"
+4-Debajo de Styles en el apartado de Scripts especificamos la siguiente ruta:
+"node_modules/bootstrap/dist/js/bootstrap.min.js"
+5-Arrancamos el servidor ng serve -o
+
+-->
+
+<form class="container ">
+  
+<div class="border text-center border border-success "> 
+
+<!--Vamos a crear un binding bidireccional entre el template y el app component-->
+<label for="numero1" class="text-primary ">   Numero 1 <br/><input type="number" [(ngModel)]="numero1" name="numero1"></label><br />
+<label for="numero2" class="justify-content-center ">  Numero 2 <br/><input type="number" [(ngModel)]="numero2" name="numero2"></label><br />
+<!--Ahora usaremos el event binding-->
+<br/>
+<div class="justify-content-center "> 
+  <input style="margin-right: 3px" type="submit" value="Sumar"(click)="sumar()" class="btn btn-primary ">
+  <input style="margin-right: 3px" type="submit" value="Restar"(click)="restar()" class="btn btn-primary">
+  <input style="margin-right: 3px"  type="submit" value="Multiplicar"(click)="multiplicar()"class="btn btn-primary">
+  <input style="margin-right: 3px"  type="submit" value="Dividir"(click)="dividir()"class="btn btn-primary">
+</div>
+<br />
+<!--Utilizamos la interpolación -->
+<p class="bg-light" >Resultado {{resultado}}</p>
+</div>
+</form>
+
+
+
